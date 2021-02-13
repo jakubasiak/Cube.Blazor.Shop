@@ -117,6 +117,43 @@ app {
     color: red;
 }
 
+.media-img {
+    max-height: 200px;
+    max-width: 200px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+}
+
+.media-img:hover {
+    transform: scale(1.05);
+}
+
+.media-img-big {
+    max-height: 500px;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+.media-img-wrapper {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+.media-img-big-wrapper {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+
+.original-price {
+    text-decoration: line-through;
+}
+
+.price {
+    color: green;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -179,5 +216,21 @@ app {
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+}
+
+@media (max-width: 1023.98px) {
+    .media {
+        flex-direction: column;
+    }
+
+    .media-img-big-wrapper, .media-img-wrapper {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .media-img-big {
+        max-width: 300px;
     }
 }

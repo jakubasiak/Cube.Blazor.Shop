@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.Blazor.Shop.Server", "Cube.Blazor.Shop\Server\Cube.Blazor.Shop.Server.csproj", "{96883B26-7796-45E7-BBFA-D9B49204E100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.Blazor.Shop.Client", "Cube.Blazor.Shop\Client\Cube.Blazor.Shop.Client.csproj", "{66E69829-82A6-49B6-85CF-92D7D61522A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cube.Blazor.Shop.Client", "Cube.Blazor.Shop\Client\Cube.Blazor.Shop.Client.csproj", "{66E69829-82A6-49B6-85CF-92D7D61522A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cube.Blazor.Shop.Shared", "Cube.Blazor.Shop\Shared\Cube.Blazor.Shop.Shared.csproj", "{92317491-D31D-4896-A746-FEF8D4566A8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cube.Blazor.Shop.Shared", "Cube.Blazor.Shop\Shared\Cube.Blazor.Shop.Shared.csproj", "{92317491-D31D-4896-A746-FEF8D4566A8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
