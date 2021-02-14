@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cube.Blazor.Shop.Client.Services.CategoryService
+namespace Cube.Blazor.Shop.Server.Services.CategoryService
 {
     public interface ICategoryService
     {
-        public List<Category> Categories { get; set; }
-        Task LoadCategories();
+        Task<List<Category>> GetCategories();
+        Task<Category> GetCategoryByUrl(string categoryUrl);
     }
 }

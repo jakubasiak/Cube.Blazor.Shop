@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Cube.Blazor.Shop.Server.Services.CategoryService;
+using Cube.Blazor.Shop.Server.Services.ProductService;
 
 namespace Cube.Blazor.Shop.Server
 {
@@ -25,6 +27,8 @@ namespace Cube.Blazor.Shop.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
