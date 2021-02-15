@@ -27,7 +27,7 @@ namespace Cube.Blazor.Shop.Server.Services.ProductService
 
         public async Task<Product> GetProduct(int id)
         {
-            return await this.dataContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+            return await this.dataContext.Products.Include(p => p.Editions).FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<List<Product>> GetProductsByCategory(string categoryUrl)
