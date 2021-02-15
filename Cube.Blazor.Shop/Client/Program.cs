@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Cube.Blazor.Shop.Client.Services.ProductService;
 using Cube.Blazor.Shop.Client.Services.CategoryService;
+using Blazored.LocalStorage;
+using Blazored.Toast;
+using Cube.Blazor.Shop.Client.Services.CartService;
 
 namespace Cube.Blazor.Shop.Client
 {
@@ -22,6 +25,9 @@ namespace Cube.Blazor.Shop.Client
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddBlazoredToast();
 
             await builder.Build().RunAsync();
         }
