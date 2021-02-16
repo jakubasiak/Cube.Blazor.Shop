@@ -12,6 +12,7 @@ using Cube.Blazor.Shop.Client.Services.CategoryService;
 using Blazored.LocalStorage;
 using Blazored.Toast;
 using Cube.Blazor.Shop.Client.Services.CartService;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Cube.Blazor.Shop.Client
 {
@@ -28,6 +29,9 @@ namespace Cube.Blazor.Shop.Client
             builder.Services.AddScoped<ICartService, CartService>();
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddBlazoredToast();
+            builder.Services.AddOptions();
+            builder.Services.AddAuthorizationCore();
+            builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
             await builder.Build().RunAsync();
         }

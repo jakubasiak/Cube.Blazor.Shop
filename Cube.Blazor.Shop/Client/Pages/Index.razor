@@ -2,20 +2,29 @@
 @page "/{categoryUrl}"
 @inject ICategoryService CategoryService;
 @inject IProductService ProductService;
+@inject ISyncLocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthStateProvider
 
-@if(category != null)
+@if (category != null)
 {
     <h1>Welcom to the @category.Name section!</h1>
-    <ProductList/>
+    <ProductList />
 }
 else
 {
-    <h1>Welcam to Blazor Shop!</h1>
+    <AuthorizeView>
+        <NotAuthorized>
+            <h1>Welcam to Blazor Shop!</h1>
+        </NotAuthorized>
+        <Authorized>
+            <h1>Welcam back, @LocalStorage.GetItemAsString("username")</h1>
+        </Authorized>
+    </AuthorizeView>
     <ProductList />
 }
 
 
-@code 
+@code
 {
     [Parameter]
     public string CategoryUrl { get; set; }
@@ -26,7 +35,7 @@ else
     {
         await ProductService.LoadProducts(CategoryUrl);
 
-        if(CategoryUrl != null)
+        if (CategoryUrl != null)
         {
             category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
         }
