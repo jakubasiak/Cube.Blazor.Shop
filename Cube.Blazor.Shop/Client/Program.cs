@@ -13,6 +13,7 @@ using Blazored.LocalStorage;
 using Blazored.Toast;
 using Cube.Blazor.Shop.Client.Services.CartService;
 using Microsoft.AspNetCore.Components.Authorization;
+using Cube.Blazor.Shop.Client.Services.StatsService;
 
 namespace Cube.Blazor.Shop.Client
 {
@@ -27,6 +28,7 @@ namespace Cube.Blazor.Shop.Client
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddScoped<IStatsService, StatsService>();
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddBlazoredToast();
             builder.Services.AddOptions();

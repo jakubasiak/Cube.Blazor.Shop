@@ -10,6 +10,7 @@ using Cube.Blazor.Shop.Server.Services.CategoryService;
 using Cube.Blazor.Shop.Server.Services.ProductService;
 using Cube.Blazor.Shop.Server.Data;
 using Microsoft.EntityFrameworkCore;
+using Cube.Blazor.Shop.Server.Services.StatsService;
 
 namespace Cube.Blazor.Shop.Server
 {
@@ -34,6 +35,7 @@ namespace Cube.Blazor.Shop.Server
             services.AddRazorPages();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IStatsService, StatsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
